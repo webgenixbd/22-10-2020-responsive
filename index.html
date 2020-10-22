@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Logestic</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+<!--    <link href="//fonts.googleapis.com/css?family=Roboto%3A400%2C700%7CSource+Sans+Pro%3A700%2C900&amp;subset=latin" rel="stylesheet">-->
+<!--Internal Style-->
+    
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            outline: none;
+            font-family: 'openSans', sans-serif
+        }
+        .d-flex{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .pt-5{
+            padding-top: 50px;
+        }
+        .pb-5{
+            padding-bottom: 50px;
+        }
+        .pl-3{
+            padding-left: 30px;
+        }
+        .pr-3{
+            padding-right: 30px;
+        }
+        img{
+            vertical-align: middle;
+            width: 100%;
+            height: auto;
+        }
+        .justify-sb{
+            justify-content: space-between
+        }
+        .light-bg{
+            color: #333;
+            background: #fff;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        ul{
+            align-content: center;
+            list-style: none;
+        }
+        .m0{
+            margin-left: 0 !important;
+            padding: 0!important;
+        }
+        header ul{
+                        width: 200px;
+
+        }
+        header li{
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            background: #558d0c;
+            line-height: 40px;
+            text-align: center;
+        }
+        .light-bg a{
+            color: #fff;
+            font-size: 20px;
+            display: block;
+        }
+        .main-color{
+            color: #558d0c;
+            
+        }
+        .main-bg{
+            background: #558d0c;
+        }
+        .header{
+            box-shadow: 0px 0px 3px #558d0c
+        }
+        .hero-area{
+            background: url(img/slider_1_1920.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            align-content: center;
+            height: 50vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        .site-btn{
+            background: #558d0c;
+            padding:10px 15px;
+            color: #fff;
+            display: inline-block;
+            position: relative;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+        h2{
+            font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .hero-content p{
+            line-height: 22px;
+            font-size: 16px;
+        }
+        .hero-content{
+            width: 50%
+        }
+        .service-box{
+            padding: 10px;
+            width: 30%;
+            color: #fff;
+            font-weight: 600;
+            background: #558d0c;
+        }
+        .service-box h3{
+            font-family: 'roboto', sans-serif;
+            text-transform: uppercase;
+            font-size: 28px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .icon{
+            font-size: 60px;
+            margin-top: 20px;
+            border: 5px solid rgba(255, 255, 255, 0.39);
+            display: inline-block;
+            padding: 10px;
+        }
+        .img-box{
+            background-size: cover!important;
+            background-position: center;
+            background-repeat: no-repeat !important;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            padding: 100px;
+            width: 50%;
+            box-sizing: border-box;
+            height: 100%;
+        }
+        .about{
+            border-top: 1px solid #ddd;
+            
+            position: relative;
+        }
+        .about-img{
+            left: 0;
+            background: url(img/slider_1_1920.jpg);
+        }
+        .wycus{
+            
+        }
+        .wycus .whcu-img{
+            right: 0;
+            background: url(img/slider_1_1920.jpg);
+        }
+        .content-box{
+            width: 50%;
+/*            background: blue;*/
+            padding:10px 30px;
+            box-sizing: border-box;
+            padding-right: 0;
+/*            height: 50vh;*/
+            margin-left: auto;
+/*            justify-content: center;*/
+/*            align-content: center;*/
+            
+            
+        }
+        .wycus .content-box{
+            margin-right: auto;
+            margin-left: 0;
+        }
+        .content-item{
+            box-sizing: border-box;
+        }
+        .content-item h3{
+            font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .content-item p{
+            font-weight: 600;
+            line-height: 23px;
+        }
+        .content-item a{
+            color: #558d0c;
+            text-transform: inherit;
+        }
+        .content-item a:hover{
+            text-decoration: underline;
+            color: #333;
+        }
+        .bg-gray{
+            background: #cee5e4;
+        }
+        .wcu li{
+            padding-bottom: 10px;
+        }
+        .wcu li i{
+            color: #558d0c;
+        }
+        .footer-wizard{
+            width: 25%;
+            padding: 10px !important;
+            box-sizing:border-box;
+        }
+         .w-1{
+            width: 40%;
+        }
+        .w-2{
+            width: 40%;
+        }
+        .qr-code{
+/*            background: #fff;*/
+            width: 19.5%;
+            overflow: hidden;
+        }
+        .qr-code img{
+/*            width: 50%;*/
+            width: auto;
+            background: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .footer{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            align-items: center;
+            color: #fff;
+            color: #fff;
+        }
+        .footer-wizard p{}
+        .footer-wizard p a{
+            display: inline-block;
+            background: #fff; color:#558d0c;
+            padding: 10px;
+        }
+        
+/*        Responsive stylesheet*/
+        
+        /* XL Device :1200px */
+        @media (min-width: 1200px) and (max-width: 1500px) {}
+/* LG Device :992px */
+        @media (min-width: 992px) and (max-width: 1200px) {
+    .hero-content h2{
+        font-size: 33px;
+    }
+        }
+/* MD Device :768px */
+        @media (min-width: 768px) and (max-width: 991px) {
+/*    hero area*/
+    .hero-content h2{
+        font-size: 25px;
+    }
+    .hero-content p {
+    font-size: 15px;
+}
+    .hero-content p span{
+        display: none;
+    }
+    
+/*    hero area end*/
+/*    Service box*/
+    .service-box {
+    font-size: 14px;
+}
+    .service-box .icon{
+        font-size: 40px;
+    }
+    .service-box h3{
+        font-size: 22px;
+    }
+    .service-box p{
+        font-size: 14px;
+    }
+/*    Service box end*/
+/*    about*/
+    .img-box{
+        width: 50%;
+    }
+/*    about end*/
+/*            footer*/
+            .qr-code img {
+    /* width: 50%; */
+     width: 100%; 
+    background: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+    /*        footer end*/
+        }
+        @media (min-width: 576px) and (max-width: 767px) {
+            /*    hero area*/
+            .hero-content {
+    width: 70%;
+}
+            .service-box {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+    .hero-content h2{
+        font-size: 25px;
+    }
+    .hero-content p {
+    font-size: 15px;
+}
+    .hero-content p span{
+        display: none;
+    }
+    
+/*    hero area end*/
+/*    Service box*/
+    .service-box {
+    font-size: 14px;
+}
+    .service-box .icon{
+        font-size: 40px;
+    }
+    .service-box h3{
+        font-size: 22px;
+    }
+    .service-box p{
+        font-size: 14px;
+    }
+/*    Service box end*/
+/*    about*/
+    .img-box{
+        width: 50%;
+    }
+/*    about end*/
+    /*        footer */
+            .qr-code img{
+                width: 100%
+            }
+            .footer-wizard p {
+    font-size: 14px;
+}
+            .footer-wizard p a{
+                padding: 5px;
+            }
+    /*        footer end*/
+        }
+        
+       
+         @media (min-width: 320px) and (max-width: 575px) {
+/*     header*/
+     header{
+         justify-content: center!important;
+     }
+     header ul{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+/*     header end*/
+            /*    hero area*/
+            .hero-content {
+    width: 100%;
+}
+            .service-box {
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+    .hero-content h2{
+        font-size: 25px;
+    }
+    .hero-content p {
+    font-size: 15px;
+}
+    .hero-content p span{
+        display: none;
+    }
+    
+/*    hero area end*/
+/*    Service box*/
+    .service-box {
+    font-size: 14px;
+}
+    .service-box .icon{
+        font-size: 40px;
+    }
+    .service-box h3{
+        font-size: 22px;
+    }
+    .service-box p{
+        font-size: 14px;
+    }
+/*    Service box end*/
+/*    about*/
+    .img-box {
+    width: 89%;
+    position: inherit;
+    left: 30px;
+}
+     .content-box{
+    margin: 0;
+    width: 100%;
+}
+     .wycus .content-box {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+}
+     .wycus .whcu-img {
+    right: 0;
+    background: url(img/slider_1_1920.jpg);
+    width: 90%;
+    position: relative;
+    left: 0;
+}
+/*    about end*/
+    /*        footer */
+     .qr-code {
+    width: 50%;
+    overflow: hidden;
+         background: none;
+}
+     
+            .qr-code img{
+                width: 100%
+            }
+     .w-1 {
+    width: 50%;
+    text-align: left !important;
+}
+            .footer-wizard p {
+    font-size: 1em;
+                text-align: left !important;
+                padding: 0;
+}
+     .footer-wizard p i{
+         display: block;
+        margin-bottom: 5px;
+         background: #fff;
+         color: #558d0c !important;
+         height: 30px;
+         width: 30px;
+         text-align: center;
+         line-height: 30px;
+         border-radius: 3px;
+     }
+            .footer-wizard p a{
+                padding: 0px;
+            }
+     .w-2 {
+    width: 100%;
+}
+    /*        footer end*/
+        }
+        
+/*        Responsive stylesheet end*/
+       
+    </style>
+    <!--Internal Style end-->
+</head>
+<body>
+<!--   Header-->
+    <header class="header d-flex justify-sb light-bg pl-3 pr-3">
+<!--       logo area start-->
+        <a href="#" class="nav-band">
+            <img src="img/logo_1.png" alt="logo">
+        </a>
+<!--        Logo area end-->
+<!--        Social area start-->
+<ul class="justify-sb d-flex">
+    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+</ul>
+<!--        Social area end-->
+    </header>
+<!--    Header end-->
+    
+<!--    Hero Area-->
+    <section class="hero-area pl-3 pr-3 pt-5 pb-5">
+    <div class="hero-content">
+        <h2>UNBEATABLE TRUCKING AND TRANSPORT SERVICES</h2>
+        <p>Starting from loading to unloading and maintaining the highest standards in terms of safety while in transit, we take nothing to chance. <span>Starting from loading to unloading and maintaining the highest standards in terms of safety while in transit, we take nothing to chance.</span>
+
+</p>
+        <a href="#" class="site-btn" style="margin-right: 5px">Started Now</a> 
+        <a href="#" class="site-btn" style="margin-left: 5px;">Learn More</a>
+    </div>
+</section>
+<!--    Hero Area end-->
+<!--Service area -->
+    <section class="service-area light-bg pl-3 pr-3 pt-5 pb-5 d-flex justify-sb">
+        <div class="service-box main-bg">
+            <div class="icon">
+                <i class="fas fa-truck"></i>
+            </div>
+            <h3>LOGISTIC SERVICE</h3>
+            <p>We provide logistic services in the nation, whether it is freight transportation, supply chain solutions, warehousing and distribution, customer resource area services, customs, security and insurance, temperature controlled logistics, industry</p>
+        </div>
+        <div class="service-box main-bg">
+            <div class="icon">
+                <i class="fas fa-box"></i>
+            </div>
+            <h3>Packaging and storage</h3>
+            <p>We provide logistic services in the nation, whether it is freight transportation, supply chain solutions, warehousing and distribution, customer resource area services, customs, security and insurance, temperature controlled logistics, industry</p>
+        </div>
+        <div class="service-box main-bg">
+            <div class="icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <h3>Door-to-door delivery</h3>
+            <p>We provide logistic services in the nation, whether it is freight transportation, supply chain solutions, warehousing and distribution, customer resource area services, customs, security and insurance, temperature controlled logistics, industry</p>
+        </div>
+        
+    </section>
+<!--Service area end-->
+<!--About our company-->
+    <section class="about light-bg pr-3 pb-5 pt-5  d-flex justify-sb">
+        <div class="img-box about-img"></div>
+        <div class="content-box d-flex pt-5 pb-5">
+            <div class="content-item">
+                <h3>About Our Company</h3>
+            <p>But i must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete count of the system, and expound the actual teaings of the great explorer idea announcing.</p>
+            <p>
+                But i must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and i will give you a complete count of the system, and expound the actual teaings of the great explorer idea announcing.
+
+            </p>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+            </div>
+        </div>
+    </section>
+<!--About our company end-->
+<!--why choose us company-->
+    <section class="about wycus pl-3  pb-5 pt-5 d-flex justify-sb bg-gray">
+        
+        <div class="content-box pt-5 pb-5 d-flex">
+            <div class="content-item  pr-3">
+                <h3>Why Choose Us</h3>
+            <p>But i must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete count of the system, and expound the actual teaings of the great explorer idea announcing. </p>
+             <ul class="m0 wcu">
+                 <li ><i class="fas fa-check"></i> Team of cargo experts are always available to help you with any queries  </li>
+                 <li ><i class="fas fa-check"></i> consectetur adipisicing elit. Ullam, eligendi. </li>
+                 
+             </ul>
+            <a href="#">Read more <i class="fas fa-angle-double-right"></i></a>
+            </div>
+        </div>
+        <div class="img-box whcu-img"></div>
+    </section>
+<!--About our company end-->
+<!--footer-->
+    <section class="footer pr-3 pl-3 main-bg d-flex justify-sb">
+        <div class="footer-wizard qr-code">
+            <img src="img/qr-code-148732_1280.png" alt="Qr">
+        </div>
+      <div class="footer-wizard w-1">
+          <p style="text-align:center"><i class="fas fa-envelope-open"></i> support@gmail.com</p>
+          <p style="text-align:center"><i class="fas fa-phone-alt"></i> +8810188918618</p>
+      </div>
+      <div class="footer-wizard w-2">
+          <p style="text-align: center"><i class="fas fa-map-marker-alt"></i> Nikunju-02, Khilkhet, Dhaka Bangladesh</p>
+          <p style="text-align: center">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-behance"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          </p>
+      </div>
+    </section>
+<!--footer end-->
+
+</body>
+</html>
